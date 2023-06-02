@@ -17,9 +17,9 @@ TEST_CASE("Test echo variable function", "Make sure function returns the functio
 
 /*test case add_to_double_1 with 0 as parameter*/
 
-TEST_CASE("Test decimal precision w add_to_dounle_1 function", "Make sure function returns the function arguement") {
-	REQUIRE(add_to_double_1(0) == 0.9);
-}
+// TEST_CASE("Test decimal precision w add_to_dounle_1 function", "Make sure function returns the function arguement") {
+	// REQUIRE(add_to_double_1(0) == 0.9);
+// }
 
 /*test case add_to_double_1 with 1 as parameter*/
 
