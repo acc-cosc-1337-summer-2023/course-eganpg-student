@@ -2,9 +2,9 @@
 
 int main()
 {
-    display_value(5);
+    // display_value(5);
 
-    display_value(10);
+    // display_value(10);
 
     int result = echo_number(20);
 
