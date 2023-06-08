@@ -13,6 +13,6 @@ Pass the year to get_generation function and display function result.
 int main() 
 {
 	
-	
+	display_sales_tax(25.50);
 	return 0;
 }
