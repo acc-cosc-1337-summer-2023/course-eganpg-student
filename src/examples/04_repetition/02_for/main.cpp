@@ -1,5 +1,7 @@
 #include"for.h"
-using std::cin; using std::cout;
+#include <iostream>
+using std::cin; 
+using std::cout;
 int main() 
 {
 	display_numbers(5);
