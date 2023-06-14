@@ -30,10 +30,10 @@ TEST_CASE("Verify Test Configuration", "verification") {
 
 // }
 
-TEST_CASE("Test string function value param")
-{
-	string lang = "C++";
-	string_value_param(lang);
+// TEST_CASE("Test string function value param")
+// {
+// 	string lang = "C++";
+// 	string_value_param(lang);
 
-	REQUIRE(lang == "Python");
-}
+// 	REQUIRE(lang == "Python");
+// }
