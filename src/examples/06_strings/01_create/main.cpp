@@ -7,6 +7,19 @@ using std::string;
 
 int main()
 {
+    // different ways to create a string
+
+    string lang1 = "C++";
+    string s0("Initial String");
+    cout<<s0<<"\n";
+    string s1(s0);
+    cout<<s1<<"\n";
+    string s2(s0, 8, 3);
+    cout<<s2<<"\n";
+    
+
+
+
     int num = 5;
     string lang = "c++";
 
