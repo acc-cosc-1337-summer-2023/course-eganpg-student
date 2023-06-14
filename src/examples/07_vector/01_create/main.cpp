@@ -15,6 +15,19 @@ int main()
     cout<<"Size: "<<nums.size()<<"\n";
     cout<<"Capacity: "<<nums.capacity()<<"\n";
 
+    //empty vector
+
+    vector<int> nums0;
+    nums0.push_back(5); // add one element to the vector
+
+    vector<int> nums3(5,10);
+
+    for(auto n: nums3)
+    {
+        cout<<n;
+    }
+    cout<<"\n";
+
 
     return 0;
 }
