@@ -1,5 +1,8 @@
 //bank_account.h
 #include<iostream>
+
+#ifndef BANK_ACCOUNT_H
+#define BANK_ACCOUNT_H
 class BankAccount
 {
     public: //access specifiers
@@ -11,5 +14,7 @@ class BankAccount
         void deposit(int amount);
         void withdraw(int amount);
     private: // access specifiers
-        int balance{0};
+        int balance{0}; //explicity int to 0
 };
+
+#endif
