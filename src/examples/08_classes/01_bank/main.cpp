@@ -1,5 +1,7 @@
 #include "bank_account.h"
 #include "atm.h"
+#include "checking_account.h"
+#include "savings_account.h"
 #include<iostream>
 
 using std::cout;
@@ -7,7 +9,11 @@ using std::cin;
 
 int main()
 {
-	auto amount = 0;
+	CheckingAccount checking;
+	cout<<checking.get_balance();
+	SavingsAccount savings;
+	cout<<savings.get_balance();
+	// auto amount = 0;
 	// string name = "";
 	// BankAccount(){};
 	BankAccount account(100);
