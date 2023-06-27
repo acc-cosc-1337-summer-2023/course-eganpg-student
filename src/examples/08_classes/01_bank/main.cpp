@@ -10,6 +10,7 @@ using std::vector;
 
 int main()
 {
+	BankAccount act;
 	// CheckingAccount checking;
 	// cout<<checking.get_balance();
 	// SavingsAccount savings;
