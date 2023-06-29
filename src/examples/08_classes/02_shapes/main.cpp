@@ -11,8 +11,18 @@ Create vector of Shape pointers
 iterate with auto
 */
 
+using std::vector;
+
 int main() 
 {
+	vector<Shape*> shapes;
+
+	Shape* shape;
+
+	Circle circle;
+	// circle.draw();
+	shapes.push_back(&circle);
+
 
 	return 0;
 }

@@ -10,7 +10,7 @@ using std::vector;
 
 int main()
 {
-	BankAccount act;
+	// BankAccount act;
 	// CheckingAccount checking;
 	// cout<<checking.get_balance();
 	// SavingsAccount savings;
@@ -25,11 +25,11 @@ int main()
 	std::vector<BankAccount> accounts;
 	// CheckingAccount checking(100);
 	// accounts.push_back(checking);
-	accounts.push_back(CheckingAccount(100));
+	// accounts.push_back(CheckingAccount(100));
 
 	// SavingsAccount savings(300);
 	// accounts.push_back(savings);
-	accounts.push_back(SavingsAccount(300));
+	// accounts.push_back(SavingsAccount(300));
 
 	run_menu(accounts);
 
