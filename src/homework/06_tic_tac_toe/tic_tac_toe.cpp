@@ -7,7 +7,19 @@ using std::cout;
 
 bool TicTacToe::game_over()
 {
-    return check_board_full();
+    // Check for column, row, or diagonal win
+    if (check_column_win() || check_row_win() || check_diagonal_win()) {
+        // If there is a win, winner is already set in the respective functions
+        return true;
+    }
+    // If the board is full and there is no win, it's a tie
+    if (check_board_full()) {
+        winner = "C";  // 'C' represents a tie
+        cout<<"There is a tie \n";
+        return true;
+    }
+    // If there is no win and the board is not full, the game is not over
+    return false;
 }
 
 void TicTacToe::start_game(std::string first_player)
@@ -39,6 +51,17 @@ void TicTacToe::display_board() const
     }
 }
 
+std::string TicTacToe::get_winner() {
+        return winner;
+    }
+
+
+
+
+
+
+// Private Functions
+
 
 void TicTacToe::set_next_player()
 {
@@ -62,4 +85,57 @@ bool TicTacToe::check_board_full()
         }
     }
     return true;
+}
+
+bool TicTacToe::check_column_win(){
+    // loop over the 3 columns
+    for (int i = 0; i < 3; ++i) {
+        // if the column isn't blank, check the other spaces in the column, if they are full and equal, winner
+        if (pegs[i] != " " && pegs[i] == pegs[i + 3] && pegs[i] == pegs[i + 6]) {
+            set_winner();
+            return true;
+        }
+    }
+    return false;
+}
+
+
+bool TicTacToe::check_row_win(){
+    // loop over the rows
+    for (int i = 0; i < 9; i += 3) {
+        // if the row isn't blank and the other spaces in the row are equal, winner winner chicken dinner
+        if (pegs[i] != " " && pegs[i] == pegs[i + 1] && pegs[i] == pegs[i + 2]) {
+            set_winner();
+            return true;
+        }
+    }
+    return false;
+}
+
+
+bool TicTacToe::check_diagonal_win(){
+    // if the spaces aren't blank check one of the diaganols
+    if (pegs[0] != " " && pegs[0] == pegs[4] && pegs[0] == pegs[8]) {
+        set_winner();
+        return true;
+    }
+    // if the other spaces aren't blank check the other diaganol
+    if (pegs[2] != " " && pegs[2] == pegs[4] && pegs[2] == pegs[6]) {
+        set_winner();
+        return true;
+    }
+    return false;
+}   
+
+void TicTacToe::set_winner() {
+    // If player is X set winner to O
+    if (player == "X") {
+        winner = "O";
+        std::cout<<"The winner is: "<<winner<<"\n";
+    } 
+    // otherwise set winner to X
+    else {
+        winner = "X";
+        std::cout<<"The winner is: "<<winner<<"\n";
+    }
 }
