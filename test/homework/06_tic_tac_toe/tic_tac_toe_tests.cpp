@@ -26,7 +26,7 @@ TEST_CASE("Test game over class function")
 	game.mark_board(9);
 	REQUIRE(game.game_over() == false);
 	game.mark_board(8);
-	REQUIRE(game.game_over() == false);
+	// REQUIRE(game.game_over() == false);
 
 	REQUIRE(game.game_over() == true);
 }
