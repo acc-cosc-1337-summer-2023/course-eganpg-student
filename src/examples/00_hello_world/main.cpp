@@ -2,11 +2,8 @@
 
 int main()
 {
-    // std::cout<<"Hello World!";
-    // std::string name(3,  'a' );
-    // std::cout<<name;
-     std::string name =  "Johnny" ;
-     std::cout<<name[3];
-
+    int x = 7;
+    int* ptr = &x;
+    std::cout<<&x;
     return 0;
 }
