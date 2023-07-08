@@ -31,10 +31,10 @@ int main()
 	// accounts.push_back(savings);
 	// accounts.push_back(SavingsAccount(300));
 
-	run_menu(accounts);
+	// run_menu(accounts);
 
-	cout<<accounts[0].get_balance()<<"\n";
-	cout<<accounts[1].get_balance()<<"\n";
+	// cout<<accounts[0].get_balance()<<"\n";
+	// cout<<accounts[1].get_balance()<<"\n";
 	// account.get_balance = 20;
 
 	// cout<<"Balance: "<<account.get_balance()<<"\n";

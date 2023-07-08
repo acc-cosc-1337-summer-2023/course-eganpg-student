@@ -6,9 +6,9 @@
 
 class CheckingAccount : public BankAccount
 {
-    public:
-        CheckingAccount(){} //default constructor
-        CheckingAccount(int b) : BankAccount(b){}
+    // public:
+    //     CheckingAccount(){} //default constructor
+    //     CheckingAccount(int b) : BankAccount(b){}
 };
 
 #endif

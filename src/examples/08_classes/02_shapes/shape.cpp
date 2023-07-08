@@ -1,6 +1,6 @@
 //shape.cpp
 
-class Shape
-{
-    void draw();
-};
+// class Shape
+// {
+//     void draw();
+// };
