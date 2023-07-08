@@ -5,7 +5,7 @@
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
-
+//Comment to rename commit to hw 4
 TEST_CASE("Test game over class function")
 {
 	TicTacToe game;
