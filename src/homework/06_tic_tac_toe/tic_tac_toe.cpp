@@ -2,6 +2,7 @@
 //Comment to rename commit to hw 4
 #include "tic_tac_toe.h"
 #include<iostream>
+#include<cmath>
 
 using std::cout;
 
@@ -45,9 +46,15 @@ void TicTacToe::clear_board()
 
 void TicTacToe::display_board() const
 {
-    for(long unsigned int i=0; i < pegs.size(); i += 3)
+    for(long unsigned int i=0; i < pegs.size(); i += std::sqrt(pegs.size()))
     {
-        cout<<pegs[i]<<"|"<<pegs[i+1]<<"|"<<pegs[i+2]<<"\n";
+        cout<<pegs[i]<<"|"<<pegs[i+1]<<"|"<<pegs[i+2];
+
+        if(pegs.size() == 16)
+        {
+            cout<<"|"<<pegs[i+3];
+        }
+        cout<<"\n";
     }
 }
 

@@ -1,14 +1,16 @@
 #define CATCH_CONFIG_MAIN  // This tells Catch to provide a main() - only do this in one cpp file
 #include "catch.hpp"
 #include "tic_tac_toe.h"
+#include "tic_tac_toe_3.h"
+#include "tic_tac_toe_4.h"
 
 TEST_CASE("Verify Test Configuration", "verification") {
 	REQUIRE(true == true);
 }
 //Comment to rename commit to hw 4
-TEST_CASE("Test game over class function")
+TEST_CASE("Test game over class function TicTacToe3")
 {
-	TicTacToe game;
+	TicTacToe3 game;
 	game.mark_board(1);
 	REQUIRE(game.game_over() == false);
 	game.mark_board(2);
@@ -32,9 +34,50 @@ TEST_CASE("Test game over class function")
 	REQUIRE(game.get_winner() == "C");
 }
 
+TEST_CASE("Test game over class function TicTacToe4")
+{
+	TicTacToe4 game;
+	game.mark_board(1);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(2);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(3);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(4);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(8);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(7);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(6);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(5);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(9);
+    REQUIRE(game.game_over() == false);
+	game.mark_board(10);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(11);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(12);
+    REQUIRE(game.game_over() == false);
+	game.mark_board(13);
+    REQUIRE(game.game_over() == false);
+	game.mark_board(14);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(15);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(16);
+	
+	// REQUIRE(game.game_over() == false);
+
+	REQUIRE(game.game_over() == true);
+	REQUIRE(game.get_winner() == "C");
+}
+
 TEST_CASE("Test game over with tie") {
     // Create an instance of TicTacToe game
-    TicTacToe game;
+    TicTacToe3 game;
 
     // Start the game with player X
     game.start_game("X");
@@ -71,10 +114,67 @@ TEST_CASE("Test game over with tie") {
     REQUIRE(game.get_winner() == "C");
 }
 
+TEST_CASE("Test game over with a tie TicTacToe4")
+{
+	TicTacToe4 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+	game.mark_board(1);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(2);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(3);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(4);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(8);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(7);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(6);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(5);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(9);
+    REQUIRE(game.game_over() == false);
+	game.mark_board(10);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(11);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(12);
+    REQUIRE(game.game_over() == false);
+	game.mark_board(13);
+    REQUIRE(game.game_over() == false);
+	game.mark_board(14);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(15);
+	REQUIRE(game.game_over() == false);
+	game.mark_board(16);
+	
+	// REQUIRE(game.game_over() == false);
+
+	REQUIRE(game.game_over() == true);
+	REQUIRE(game.get_winner() == "C");
+}
+
+
 
 TEST_CASE("Test first player set to X") {
     // Create an instance of TicTacToe
-    TicTacToe game;
+    TicTacToe3 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+    // Verify that get_player() returns X
+    REQUIRE(game.get_player() == "X");
+}
+
+TEST_CASE("Test first player set to X Game4") {
+    // Create an instance of TicTacToe
+    TicTacToe4 game;
 
     // Start the game with player X
     game.start_game("X");
@@ -85,7 +185,18 @@ TEST_CASE("Test first player set to X") {
 
 TEST_CASE("Test first player set to O") {
     // Create an instance of TicTacToe
-    TicTacToe game;
+    TicTacToe3 game;
+
+    // Start the game with player O
+    game.start_game("O");
+
+    // Verify that get_player() returns O
+    REQUIRE(game.get_player() == "O");
+}
+
+TEST_CASE("Test first player set to O Game 4") {
+    // Create an instance of TicTacToe
+    TicTacToe4 game;
 
     // Start the game with player O
     game.start_game("O");
@@ -96,7 +207,7 @@ TEST_CASE("Test first player set to O") {
 
 TEST_CASE("Test win by first column") {
     // Create an instance of TicTacToe game
-    TicTacToe game;
+    TicTacToe3 game;
 
     // Start the game with player X
     game.start_game("X");
@@ -115,9 +226,31 @@ TEST_CASE("Test win by first column") {
     REQUIRE(game.get_winner() == "X");
 }
 
+TEST_CASE("Test win by first column Game 4") {
+    // Create an instance of TicTacToe game
+    TicTacToe4 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+    game.mark_board(1);   // Player X
+    game.mark_board(2);   // Player O
+    game.mark_board(5);   // Player X
+    game.mark_board(3);   // Player O
+    game.mark_board(9);   // Player X
+    game.mark_board(4);   // Player O
+    game.mark_board(13);  // Player X
+
+    // Verify that game_over() is true
+    REQUIRE(game.game_over() == true);
+
+    // Verify that winner is X
+    REQUIRE(game.get_winner() == "X");
+}
+
 TEST_CASE("Test win by second column") {
     // Create an instance of TicTacToe game
-    TicTacToe game;
+    TicTacToe3 game;
 
     // Start the game with player X
     game.start_game("X");
@@ -136,9 +269,30 @@ TEST_CASE("Test win by second column") {
     REQUIRE(game.get_winner() == "X");
 }
 
+TEST_CASE("Test win by second column Game 4") {
+    // Create an instance of TicTacToe game
+    TicTacToe4 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+    game.mark_board(2);   // Player X
+    game.mark_board(1);   // Player O
+    game.mark_board(6);   // Player X
+    game.mark_board(5);   // Player O
+    game.mark_board(10);  // Player X
+    game.mark_board(9);   // Player O
+    game.mark_board(14);  // Player X
+    // Verify that game_over() is true
+    REQUIRE(game.game_over() == true);
+
+    // Verify that winner is X
+    REQUIRE(game.get_winner() == "X");
+}
+
 TEST_CASE("Test win by third column") {
     // Create an instance of TicTacToe game
-    TicTacToe game;
+    TicTacToe3 game;
 
     // Start the game with player X
     game.start_game("X");
@@ -157,9 +311,56 @@ TEST_CASE("Test win by third column") {
     REQUIRE(game.get_winner() == "X");
 }
 
+TEST_CASE("Test win by third column Game 4") {
+    // Create an instance of TicTacToe game
+    TicTacToe4 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+    game.mark_board(3);   // Player X
+    game.mark_board(1);   // Player O
+    game.mark_board(7);   // Player X
+    game.mark_board(5);   // Player O
+    game.mark_board(11);  // Player X
+    game.mark_board(9);   // Player O
+    game.mark_board(15);  // Player X
+
+    // Verify that game_over() is true
+    REQUIRE(game.game_over() == true);
+
+    // Verify that winner is X
+    REQUIRE(game.get_winner() == "X");
+}
+
+TEST_CASE("Test win by fourth column Game 4") {
+    // Create an instance of TicTacToe game
+    TicTacToe4 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+    game.mark_board(4);   // Player X
+    game.mark_board(1);   // Player O
+    game.mark_board(8);   // Player X
+    game.mark_board(5);   // Player O
+    game.mark_board(12);  // Player X
+    game.mark_board(9);   // Player O
+    game.mark_board(16);  // Player X
+
+    // Verify that game_over() is true
+    REQUIRE(game.game_over() == true);
+
+    // Verify that winner is X
+    REQUIRE(game.get_winner() == "X");
+}
+
+
+
+
 TEST_CASE("Test win by first row") {
     // Create an instance of TicTacToe game
-    TicTacToe game;
+    TicTacToe3 game;
 
     // Start the game with player X
     game.start_game("X");
@@ -178,9 +379,33 @@ TEST_CASE("Test win by first row") {
     REQUIRE(game.get_winner() == "X");
 }
 
+TEST_CASE("Test win by first row Game 4") {
+    // Create an instance of TicTacToe game
+    TicTacToe4 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+    game.mark_board(1);   // Player X
+    game.mark_board(5);   // Player O
+    game.mark_board(2);   // Player X
+    game.mark_board(6);   // Player O
+    game.mark_board(3);   // Player X
+    game.mark_board(7);   // Player O
+    game.mark_board(4);   // Player X
+
+    // Verify that game_over() is true
+    REQUIRE(game.game_over() == true);
+
+    // Verify that winner is X
+    REQUIRE(game.get_winner() == "X");
+}
+
+
+
 TEST_CASE("Test win by second row") {
     // Create an instance of TicTacToe game
-    TicTacToe game;
+    TicTacToe3 game;
 
     // Start the game with player X
     game.start_game("X");
@@ -199,9 +424,32 @@ TEST_CASE("Test win by second row") {
     REQUIRE(game.get_winner() == "X");
 }
 
+TEST_CASE("Test win by second row Game 4") {
+    // Create an instance of TicTacToe game
+    TicTacToe4 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+    game.mark_board(5);   // Player X
+    game.mark_board(1);   // Player O
+    game.mark_board(6);   // Player X
+    game.mark_board(2);   // Player O
+    game.mark_board(7);   // Player X
+    game.mark_board(3);   // Player O
+    game.mark_board(8);   // Player X
+
+
+    // Verify that game_over() is true
+    REQUIRE(game.game_over() == true);
+
+    // Verify that winner is X
+    REQUIRE(game.get_winner() == "X");
+}
+
 TEST_CASE("Test win by third row") {
     // Create an instance of TicTacToe game
-    TicTacToe game;
+    TicTacToe3 game;
 
     // Start the game with player X
     game.start_game("X");
@@ -220,9 +468,55 @@ TEST_CASE("Test win by third row") {
     REQUIRE(game.get_winner() == "X");
 }
 
+TEST_CASE("Test win by third row Game 4") {
+    // Create an instance of TicTacToe game
+    TicTacToe4 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+    game.mark_board(9);   // Player X
+    game.mark_board(1);   // Player O
+    game.mark_board(10);  // Player X
+    game.mark_board(2);   // Player O
+    game.mark_board(11);  // Player X
+    game.mark_board(3);   // Player O
+    game.mark_board(12);  // Player X
+
+    // Verify that game_over() is true
+    REQUIRE(game.game_over() == true);
+
+    // Verify that winner is X
+    REQUIRE(game.get_winner() == "X");
+}
+
+
+TEST_CASE("Test win by fourth row Game 4") {
+    // Create an instance of TicTacToe game
+    TicTacToe4 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+    game.mark_board(13);  // Player X
+    game.mark_board(1);   // Player O
+    game.mark_board(14);  // Player X
+    game.mark_board(2);   // Player O
+    game.mark_board(15);  // Player X
+    game.mark_board(3);   // Player O
+    game.mark_board(16);  // Player X
+
+    // Verify that game_over() is true
+    REQUIRE(game.game_over() == true);
+
+    // Verify that winner is X
+    REQUIRE(game.get_winner() == "X");
+}
+
+
 TEST_CASE("Test win diagonally from top left") {
     // Create an instance of TicTacToe game
-    TicTacToe game;
+    TicTacToe3 game;
 
     // Start the game with player X
     game.start_game("X");
@@ -241,9 +535,32 @@ TEST_CASE("Test win diagonally from top left") {
     REQUIRE(game.get_winner() == "X");
 }
 
+TEST_CASE("Test win diagonally from top left Game 4") {
+    // Create an instance of TicTacToe game
+    TicTacToe4 game;
+
+    // Start the game with player X
+    game.start_game("X");
+
+    game.mark_board(1);   // Player X
+    game.mark_board(5);   // Player O
+    game.mark_board(6);   // Player X
+    game.mark_board(2);   // Player O
+    game.mark_board(11);  // Player X
+    game.mark_board(3);   // Player O
+    game.mark_board(16);  // Player X
+
+    // Verify that game_over() is true
+    REQUIRE(game.game_over() == true);
+
+    // Verify that winner is X
+    REQUIRE(game.get_winner() == "X");
+}
+
+
 TEST_CASE("Test win diagonally from bottom left") {
     // Create an instance of TicTacToe game
-    TicTacToe game;
+    TicTacToe3 game;
 
     // Start the game with player X
     game.start_game("X");
@@ -259,5 +576,20 @@ TEST_CASE("Test win diagonally from bottom left") {
     REQUIRE(game.game_over() == true);
 
     // Verify that winner is X
+    REQUIRE(game.get_winner() == "X");
+}
+
+TEST_CASE("Test win diagonally from top right Game 4") {
+    TicTacToe4 game;
+    game.start_game("X");
+
+    game.mark_board(4);   // Player X
+    game.mark_board(3);   // Player O
+    game.mark_board(7);   // Player X
+    game.mark_board(2);   // Player O
+    game.mark_board(10);  // Player X
+    game.mark_board(1);   // Player O
+    game.mark_board(13);  // Player X
+    REQUIRE(game.game_over() == true);
     REQUIRE(game.get_winner() == "X");
 }
